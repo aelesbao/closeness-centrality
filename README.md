@@ -25,7 +25,10 @@ Users feature (you can find it under Roles).
 
 ## Proposed Solution
 
-*TODO*
+* For a simple approach, it's assumed that the graph object is an
+_Undirected Graph_. It uses an _Adjacency List_ to store the edges.
+* Implement _Dijkstra's algorithm_ for the shortest path.
+* Calculate the _Closeness Centrality_.
 
 ## Requirements to run
 
