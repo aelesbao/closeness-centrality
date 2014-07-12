@@ -1,11 +1,15 @@
 package cc.graph.algorithms
 
+import cc.graph.Graph
+
 import scala.collection.mutable.{Map, PriorityQueue, Set}
 
-abstract class ShortestPath[V] {
+trait ShortestPath[V] {
   case class Pair(val key: V, val priority: Int) extends Ordered[Pair] {
     def compare(that: Pair) = this.priority - that.priority
   }
+
+  val graph: Graph[V]
 
   /* distancesFrom(source):
    * Calculates the shortest paths to all nodes from 'source'.
@@ -14,7 +18,7 @@ abstract class ShortestPath[V] {
   def distancesFrom(source: V): Map[V, Int]
 }
 
-class Dijkstra[V](graph: Graph[V]) extends ShortestPath[V] {
+trait Dijkstra[V] extends ShortestPath[V] {
   def distancesFrom(source: V) = {
     assume(graph.contains(source), "Source is not known!")
 
@@ -45,3 +49,5 @@ class Dijkstra[V](graph: Graph[V]) extends ShortestPath[V] {
     distances
   }
 }
+
+class DijkstraImpl[V](val graph: Graph[V]) extends Dijkstra[V]
