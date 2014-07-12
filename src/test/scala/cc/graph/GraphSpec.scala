@@ -20,6 +20,11 @@ class GraphSpec extends FlatSpec with Matchers {
     graph should have size 4
   }
 
+  it should "test for existance of a node" in {
+    val graph = Graph(edges)
+    graph.contains(2) should be(true)
+  }
+
   it should "allow access to neighbours of node" in {
     val graph = Graph(edges)
     graph(1) should equal(Set(2, 3))

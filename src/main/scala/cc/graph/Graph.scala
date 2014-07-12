@@ -30,6 +30,14 @@ class Graph[V](edges: Map[V, Set[V]] = Map.empty[V, Set[V]]) {
 
   def size = vertices.size
 
+  /* contains(node)
+   * Tests whether this graph contains a given node.
+   */
+  def contains(node: V) = edges.contains(node)
+
+  /* apply(node)
+   * Returns all neighbours of a node.
+   */
   def apply(node: V) = edges(node)
 
   override def toString() = s"Graph(${edges})"
