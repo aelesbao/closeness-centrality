@@ -1,6 +1,7 @@
 package cc.graph
 
 case class Edge[V](val from: V, val to: V) {
+  def invert = Edge(to, from)
   def looped = (from == to)
 }
 
@@ -15,9 +16,8 @@ class Graph[V](edges: Map[V, Set[V]] = Map.empty[V, Set[V]]) {
    */
   def +(edge: Edge[V]): Graph[V] = {
     assume(!edge.looped, "Cannot add a looped edge")
-
-    val nodes = edges.getOrElse(edge.from, Set.empty)
-    new Graph(edges + (edge.from -> (nodes + edge.to)))
+    val newEdges = edges + edge + edge.invert
+    new Graph(newEdges)
   }
 
   /* ++(edges)
@@ -33,6 +33,11 @@ class Graph[V](edges: Map[V, Set[V]] = Map.empty[V, Set[V]]) {
   def apply(node: V) = edges(node)
 
   override def toString() = s"Graph(${edges})"
+
+  implicit def buildEdges(edge: Edge[V]): (V, Set[V]) = {
+    val nodes = edges.getOrElse(edge.from, Set.empty)
+    edge.from -> (nodes + edge.to)
+  }
 }
 
 object Graph {

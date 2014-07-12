@@ -25,6 +25,11 @@ class GraphSpec extends FlatSpec with Matchers {
     graph(1) should equal(Set(2, 3))
   }
 
+  it should "add the inverse of the specified edges" in {
+    val graph = Graph(edges)
+    graph(4) should contain(3)
+  }
+
   it should "not allow looped edges" in {
     the [AssertionError] thrownBy {
       new Graph + Edge(1, 1)
