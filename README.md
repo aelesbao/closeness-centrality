@@ -30,15 +30,21 @@ _Undirected Graph_. It uses an _Adjacency List_ to store the edges.
 * Implement _Dijkstra's algorithm_ for the shortest path.
 * Calculate the _Closeness Centrality_.
 
-## Requirements to run
+## Requirements
 
 * JDK 1.7
 * Scala 2.11.1
 * SBT 0.13.3
 
-## How to build
+## Running the sample code
 
-Just type in a console `sbt test` and have fun! :)
+### From the command line
+
+`sbt "run [ARGUMENTS]"`
+
+### Tests
+
+Type in a shell `sbt test`.
 
 ## References
 
