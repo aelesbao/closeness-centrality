@@ -3,11 +3,16 @@ package cc.graph
 import org.scalatest.{FlatSpec, Matchers}
 
 class GraphSpec extends FlatSpec with Matchers {
-  val edges = Set(Edge(1, 2), Edge(1, 3), Edge(2, 3), Edge(3, 4))
+  val edges = Set((1, 2), (1, 3), (2, 3), (3, 4))
 
   "An Edge" should "be looped when 'from' and 'to' are equal" in {
     val edge = Edge(1, 1)
     edge shouldBe 'looped
+  }
+
+  it should "build its inverse too" in {
+    val edge = Edge(1, 2)
+    edge.invert should equal(Edge(2, 1))
   }
 
   "A Graph" should "store all vertices" in {
@@ -37,7 +42,7 @@ class GraphSpec extends FlatSpec with Matchers {
 
   it should "not allow looped edges" in {
     the [AssertionError] thrownBy {
-      new Graph + Edge(1, 1)
+      new Graph + (1, 1)
     } should have message "assumption failed: Cannot add a looped edge"
   }
 }

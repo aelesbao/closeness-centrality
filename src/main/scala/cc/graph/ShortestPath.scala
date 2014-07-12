@@ -2,12 +2,9 @@ package cc.graph
 
 import scala.collection.mutable.{Map, PriorityQueue, Set}
 
-abstract class ShortestPath[V](graph: Graph[V]) {
-  /* key:priority pair; the ordering is on the priority. */
+abstract class ShortestPath[V] {
   case class Pair(val key: V, val priority: Int) extends Ordered[Pair] {
     def compare(that: Pair) = this.priority - that.priority
-
-    override def toString() = s"($priority:$key)"
   }
 
   /* distancesFrom(source):
@@ -17,7 +14,7 @@ abstract class ShortestPath[V](graph: Graph[V]) {
   def distancesFrom(source: V): Map[V, Int]
 }
 
-class Dijkstra[V](graph: Graph[V]) extends ShortestPath[V](graph) {
+class Dijkstra[V](graph: Graph[V]) extends ShortestPath[V] {
   def distancesFrom(source: V) = {
     assume(graph.contains(source), "Source is not known!")
 
