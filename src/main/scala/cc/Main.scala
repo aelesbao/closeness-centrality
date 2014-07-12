@@ -1,19 +1,15 @@
 package cc
 
 import cc.graph._
-import cc.graph.algorithms.DijkstraImpl
+import cc.graph.algorithms.{ClosenessCentralityWithDijkstra, DijkstraImpl, ClosenessCentrality}
 
 import scala.io.Source
 
 object Main {
   def main(args: Array[String]) {
     val graph = loadGraph(getClass.getResource("/edges.txt"))
-
-    val dijkstra = new DijkstraImpl(graph)
-    for (node <- graph.vertices) {
-      val distances = dijkstra.distancesFrom(node)
-      println(s"Distances for $node: $distances")
-    }
+    val closenessCentrality = new ClosenessCentralityWithDijkstra(graph)
+    println(s"Nodes closeness ${closenessCentrality.verticesCloseness}")
   }
 
   def loadGraph(path: java.net.URL) = {
