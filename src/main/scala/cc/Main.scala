@@ -9,7 +9,11 @@ object Main {
   def main(args: Array[String]) {
     val graph = loadGraph(getClass.getResource("/edges.txt"))
     val closenessCentrality = new ClosenessCentralityWithDijkstra(graph)
-    println(s"Nodes closeness ${closenessCentrality.verticesCloseness}")
+
+    println(s"Nodes Closeness Centrality")
+    for ((node, score) <- closenessCentrality.verticesCloseness) {
+      println(s"  $node: $score")
+    }
   }
 
   def loadGraph(path: java.net.URL) = {
