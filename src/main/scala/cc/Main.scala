@@ -13,7 +13,7 @@ object Main {
 
   def loadEdges(path: java.net.URL) = {
     val source = Source.fromURL(path)
-    val lines = source.getLines().map(_.split(" "))
+    val lines = source.getLines().map(_.trim.split(" "))
     lines.map(l => Edge(l(0), l(1))).toIterable
   }
 }

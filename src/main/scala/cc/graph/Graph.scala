@@ -7,7 +7,7 @@ case class Edge[V](val from: V, val to: V) {
 /* Class Graph[V] describes a graph with vertices of type V, with connecting
  * direction, unweighted edges.
  */
-class Graph[V](val edges: Map[V, Set[V]] = Map.empty[V, Set[V]]) {
+class Graph[V](edges: Map[V, Set[V]] = Map.empty[V, Set[V]]) {
   lazy val vertices = edges.foldLeft(Set.empty[V])((set, map) => set ++ map._2 + map._1)
 
   /* +(edge)
