@@ -1,4 +1,4 @@
-package cc.graph
+package cc.graph.algorithms
 
 import scala.collection.mutable.{Map, PriorityQueue, Set}
 

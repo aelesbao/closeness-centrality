@@ -1,5 +1,6 @@
-package cc.graph
+package cc.graph.algorithms
 
+import cc.graph._
 import org.scalatest.{FlatSpec, Matchers}
 
 class ShortestPathSpec extends FlatSpec with Matchers {
