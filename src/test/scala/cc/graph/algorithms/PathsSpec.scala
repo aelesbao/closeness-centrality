@@ -1,7 +1,6 @@
 package cc.graph.algorithms
 
 import cc.graph._
-
 import org.scalatest.{FlatSpec, Matchers}
 
 class PathsSpec extends FlatSpec with Matchers {
@@ -24,7 +23,7 @@ class PathsSpec extends FlatSpec with Matchers {
 
   it should "validate that the source node exists" in {
     val dijkstra = new DijkstraImpl(graph)
-    the [AssertionError] thrownBy {
+    the[AssertionError] thrownBy {
       dijkstra.distancesFrom(0)
     } should have message "assumption failed: Source is not known!"
   }

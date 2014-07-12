@@ -5,6 +5,7 @@ import cc.graph.Graph
 import scala.collection.mutable.{Map, PriorityQueue, Set}
 
 trait ShortestPath[V] {
+
   case class Pair(val key: V, val priority: Int) extends Ordered[Pair] {
     def compare(that: Pair) = this.priority - that.priority
   }

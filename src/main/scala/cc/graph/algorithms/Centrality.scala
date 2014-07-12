@@ -4,7 +4,9 @@ import cc.graph.Graph
 
 import scala.collection.mutable.PriorityQueue
 
-trait ClosenessCentrality[V] { this: ShortestPath[V] =>
+trait ClosenessCentrality[V] {
+  this: ShortestPath[V] =>
+
   def getNodeScore(node: V): Double = {
     val distances = distancesFrom(node)
     distances.values.sum.toDouble / distances.size

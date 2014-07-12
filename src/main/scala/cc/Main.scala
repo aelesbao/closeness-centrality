@@ -1,7 +1,7 @@
 package cc
 
 import cc.graph._
-import cc.graph.algorithms.{ClosenessCentralityWithDijkstra, DijkstraImpl, ClosenessCentrality}
+import cc.graph.algorithms.ClosenessCentralityWithDijkstra
 
 import scala.io.Source
 

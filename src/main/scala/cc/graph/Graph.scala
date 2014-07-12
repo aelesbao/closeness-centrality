@@ -4,6 +4,7 @@ import scala.language.implicitConversions
 
 case class Edge[V](val from: V, val to: V) {
   def invert = Edge(to, from)
+
   def looped = (from == to)
 }
 

@@ -42,7 +42,7 @@ class GraphSpec extends FlatSpec with Matchers {
 
   it should "not allow looped edges" in {
     the [AssertionError] thrownBy {
-      new Graph + (1, 1)
+      new Graph +(1, 1)
     } should have message "assumption failed: Cannot add a looped edge"
   }
 }
