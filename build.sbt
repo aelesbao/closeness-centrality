@@ -8,6 +8,7 @@ scalaVersion := "2.11.1"
 mainClass := Some("cc.Main")
 
 libraryDependencies ++= Seq(
+  "com.restfb" % "restfb" % "1.6.14",
   "org.scalatest" % "scalatest_2.11" % "2.2.0" % "test"
 )
 
