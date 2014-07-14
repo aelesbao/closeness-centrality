@@ -1,6 +1,6 @@
 package cc.graph
 
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class GraphSpec extends FlatSpec with Matchers {
   val edges = Set((1, 2), (1, 3), (2, 3), (3, 4))
@@ -17,7 +17,7 @@ class GraphSpec extends FlatSpec with Matchers {
 
   "A Graph" should "store all vertices" in {
     val graph = Graph(edges)
-    graph.vertices should contain allOf(1, 2, 3, 4)
+    graph.vertices should contain allOf (1, 2, 3, 4)
   }
 
   it should "have size equals to number of vertices" in {
@@ -41,8 +41,8 @@ class GraphSpec extends FlatSpec with Matchers {
   }
 
   it should "not allow looped edges" in {
-    the [AssertionError] thrownBy {
-      new Graph +(1, 1)
+    the[AssertionError] thrownBy {
+      new Graph + (1, 1)
     } should have message "assumption failed: Cannot add a looped edge"
   }
 }

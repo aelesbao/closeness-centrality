@@ -1,7 +1,7 @@
 package cc.graph.algorithms
 
 import cc.graph._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class PathsSpec extends FlatSpec with Matchers {
   /*

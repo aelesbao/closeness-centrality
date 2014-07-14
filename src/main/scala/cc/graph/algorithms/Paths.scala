@@ -2,7 +2,7 @@ package cc.graph.algorithms
 
 import cc.graph.Graph
 
-import scala.collection.mutable.{Map, PriorityQueue, Set}
+import scala.collection.mutable.{ Map, PriorityQueue, Set }
 
 trait ShortestPath[V] {
 

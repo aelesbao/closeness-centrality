@@ -1,7 +1,7 @@
 package cc.graph.algorithms
 
 import cc.graph._
-import org.scalatest.{FlatSpec, Matchers}
+import org.scalatest.{ FlatSpec, Matchers }
 
 class CentralitySpec extends FlatSpec with Matchers {
   /*
@@ -24,6 +24,6 @@ class CentralitySpec extends FlatSpec with Matchers {
   it should "order graph's vertices by closeness" in {
     val closenessCentrality = new ClosenessCentralityWithDijkstra(graph)
     val closeness = closenessCentrality.verticesCloseness
-    closeness should contain inOrder((3, 1.2), (4, 1.4), (2, 1.6), (6, 1.6), (5, 1.8), (1, 1.8))
+    closeness should contain inOrder ((3, 1.2), (4, 1.4), (2, 1.6), (6, 1.6), (5, 1.8), (1, 1.8))
   }
 }
