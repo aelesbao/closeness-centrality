@@ -40,7 +40,17 @@ _Undirected Graph_. It uses an _Adjacency List_ to store the edges.
 
 ### Edges file parsing and Facebook Graph
 
-Export your `ACCESS_TOKEN` and `APP_SECRET` into the environment and then type `sbt run`.
+Export your `ACCESS_TOKEN` and `APP_SECRET` into the environment and
+then type `sbt run`.
+
+An easier to do this should be to create a `.env`
+file in the project root (as exemplified bellow) and then just type
+`source .env && sbt run`.
+
+```
+ACCESS_TOKEN="..."
+APP_SECRET="..."
+```
 
 ### Tests
 
